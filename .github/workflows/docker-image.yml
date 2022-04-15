@@ -47,9 +47,9 @@ jobs:
 
     - name: save helm chart to local registry
       run: |
-       helm chart save ./charts-courseassessment-gracjan-api-0.1.0.tgz bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v02
+       helm chart save ./charts-courseassessment-gracjan-api-0.1.0.tgz bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v03
     - name: Helm chart Push
-      run: helm chart push bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v02
+      run: helm chart push bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v03
     - name: Helm chart upgrade
       run: helm upgrade --namespace ns-gracjan --install --set image.tag=v02 release01 helm\charts-courseassessment-gracjan-api
 
