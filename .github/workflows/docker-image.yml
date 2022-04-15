@@ -50,6 +50,8 @@ jobs:
        helm chart save ./charts-courseassessment-gracjan-api-0.1.0.tgz bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v02
     - name: Helm chart Push
       run: helm chart push bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v02
+    - name: Helm chart upgrade
+      run: helm upgrade --namespace ns-gracjan --install --set image.tag=v02 charts-courseassessment-gracjan-api charts-courseassessment-gracjan-api
 
   deploy:
     runs-on: ubuntu-latest
