@@ -43,13 +43,13 @@ jobs:
       run: |
         echo $ | helm registry login bcglabacr01.azurecr.io --username bcglabacr01 --password vQign8/X5HO3XhfXFWFW05CtHqpYV+dM
     - name: Package the helm chart
-      run: helm package ./helm/courseassessment-api
+      run: helm package ./helm/charts-courseassessment-gracjan-api
 
     - name: save helm chart to local registry
       run: |
-       helm chart save ./courseassessment-api-0.1.0.tgz bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v01
+       helm chart save ./charts-courseassessment-gracjan-api-0.1.0.tgz barclaysacr02.azurecr.io/charts-courseassessment-gracjan-api:v02
     - name: Helm chart Push
-      run: helm chart push bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v01
+      run: helm chart push bcglabacr01.azurecr.io/charts-courseassessment-gracjan-api:v02
 
   deploy:
     runs-on: ubuntu-latest
